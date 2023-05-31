@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";import "./movie.css";
+import React, { useEffect, useState } from "react";
+import "./movie.css";
 import { useParams } from "react-router-dom";
 
 const Movie = () => {
@@ -99,6 +100,7 @@ const Movie = () => {
             href={currentMovieDetail.homepage}
             target="_blank"
             style={{ textDecoration: "none" }}
+            rel="noreferrer"
           >
             <p>
               <span className="movie__homeButton movie__Button">
@@ -112,6 +114,7 @@ const Movie = () => {
             href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
             target="_blank"
             style={{ textDecoration: "none" }}
+            rel="noreferrer"
           >
             <p>
               <span className="movie__imdbButton movie__Button">
