@@ -1,4 +1,5 @@
-import React, { useState } from "react";import "./Header.css";
+import React, { useState } from "react";
+import "./Header.css";
 import { Link } from "react-router-dom";
 import { RiMovie2Fill } from "react-icons/ri";
 
@@ -28,10 +29,10 @@ const Header = () => {
         <Link to="/movies/upcoming" style={{ textDecoration: "none" }}>
           <span>Upcoming</span>
         </Link>
-        <Link to="watched" style={{ textDecoration: "none" }}>
+        <Link to="watchList" style={{ textDecoration: "none" }}>
           <span>WatchList</span>
         </Link>
-        <Link to="watchList" style={{ textDecoration: "none" }}>
+        <Link to="watched" style={{ textDecoration: "none" }}>
           <span>watched</span>
         </Link>
         <Link className="btnB" to="add" style={{ textDecoration: "none" }}>
