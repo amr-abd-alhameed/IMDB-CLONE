@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";const initialState = {
+import { createSlice } from "@reduxjs/toolkit";
+const initialState = {
   watchedMovies: [],
   watchListMovies: [],
 };
@@ -20,6 +21,17 @@ const MovieSlice = createSlice({
         (movie) => movie.imdbID !== action.payload.imdbID
       );
     },
+    moveToWatchList(state, action) {
+      state.watchedMovies = state.watchedMovies.filter(
+        (movie) => movie.imdbID !== action.payload.imdbID
+      );
+      state.watchListMovies.push(action.payload);
+    },
+    removeMovieFromWatched(state, action) {
+      state.watchedMovies = state.watchedMovies.filter(
+        (movie) => movie.imdbID !== action.payload.imdbID
+      );
+    },
   },
 });
 
@@ -27,5 +39,7 @@ export const {
   addMovieToWatchList,
   addMovieToWatched,
   removeMovieToWatchList,
+  moveToWatchList,
+  removeMovieFromWatched,
 } = MovieSlice.actions;
 export default MovieSlice.reducer;

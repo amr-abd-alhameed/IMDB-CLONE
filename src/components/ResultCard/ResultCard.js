@@ -1,5 +1,5 @@
 import React from "react";import "./ResultCard.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addMovieToWatchList,
   addMovieToWatched,
@@ -7,6 +7,23 @@ import {
 
 const ResultCard = ({ movie }) => {
   const dispatch = useDispatch();
+
+  const watchListMovies = useSelector((state) => state.movies.watchListMovies);
+  const watchedMovies = useSelector((state) => state.movies.watchedMovies);
+
+  let storedMovies = watchListMovies.find(
+    (item) => item.imdbID === movie.imdbID
+  );
+  let storedMoviesWatched = watchedMovies.find(
+    (item) => item.imdbID === movie.imdbID
+  );
+
+  const watchListMoviesDisabled = storedMovies
+    ? true
+    : storedMoviesWatched
+    ? true
+    : false;
+  const watchedMoviesDisabled = storedMoviesWatched ? true : false;
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -26,7 +43,7 @@ const ResultCard = ({ movie }) => {
             onClick={() => {
               dispatch(addMovieToWatchList(movie));
             }}
-            className="btn"
+            className={`btn ${watchListMoviesDisabled ? "disabled" : "active"}`}
           >
             Add To WatchList
           </button>
@@ -34,7 +51,7 @@ const ResultCard = ({ movie }) => {
             onClick={() => {
               dispatch(addMovieToWatched(movie));
             }}
-            className="btn"
+            className={`btn ${watchedMoviesDisabled ? "disabled" : "active"}`}
           >
             Add To Watched
           </button>

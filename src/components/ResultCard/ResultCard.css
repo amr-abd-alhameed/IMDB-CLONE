@@ -54,3 +54,7 @@
   background-color: #f5c518;
   color: black;
 }
+.disabled {
+  background-color: gray !important;
+  color: #bbbbd3;
+}

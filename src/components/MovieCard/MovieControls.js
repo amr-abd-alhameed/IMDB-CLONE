@@ -1,10 +1,11 @@
-import React from "react";
-import { TiDelete } from "react-icons/ti";
+import React from "react";import { TiDelete } from "react-icons/ti";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import {
   addMovieToWatched,
+  moveToWatchList,
+  removeMovieFromWatched,
   removeMovieToWatchList,
 } from "../../Redux Toolkit/Features/addMovie/movieSlice";
 
@@ -25,10 +26,12 @@ export const MovieControls = ({ movie, type }) => {
       {type === "watched" && (
         <>
           <button className="ctrl-btn">
-            <TiDelete />{" "}
+            <TiDelete onClick={() => dispatch(removeMovieFromWatched(movie))} />{" "}
           </button>
           <button className="ctrl-btn">
-            <AiFillEyeInvisible />{" "}
+            <AiFillEyeInvisible
+              onClick={() => dispatch(moveToWatchList(movie))}
+            />{" "}
           </button>
         </>
       )}
