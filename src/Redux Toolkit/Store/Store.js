@@ -1,5 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
-import MovieSlice from "../Features/addMovie/movieSlice";
+import { configureStore } from "@reduxjs/toolkit";import MovieSlice from "../Features/addMovie/movieSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 import storage from "redux-persist/lib/storage";
