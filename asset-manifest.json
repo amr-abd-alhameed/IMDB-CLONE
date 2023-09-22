@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/IMDB-CLONE/static/css/main.1a213560.css",
-    "main.js": "/IMDB-CLONE/static/js/main.febbe6fa.js",
+    "main.js": "/IMDB-CLONE/static/js/main.b344b950.js",
     "index.html": "/IMDB-CLONE/index.html",
     "main.1a213560.css.map": "/IMDB-CLONE/static/css/main.1a213560.css.map",
-    "main.febbe6fa.js.map": "/IMDB-CLONE/static/js/main.febbe6fa.js.map"
+    "main.b344b950.js.map": "/IMDB-CLONE/static/js/main.b344b950.js.map"
   },
   "entrypoints": [
     "static/css/main.1a213560.css",
-    "static/js/main.febbe6fa.js"
+    "static/js/main.b344b950.js"
   ]
 }
